@@ -1,0 +1,30 @@
+GET http://localhost:3001/photos
+
+###
+GET http://localhost:3001/tulisan
+
+###
+GET http://localhost:3001/getOne/2
+
+###
+POST  http://localhost:3001/photos/create 
+Content-Type: application/json
+
+{
+    "title" : "Foto joss",
+    "caption": "Ini Foto",
+    "image_url": "www.yt.com"
+}
+
+###
+DELETE http://localhost:3001/delete/3
+
+###
+PUT http://localhost:3001/update/6
+Content-Type: application/json
+
+{
+    "title" : "Foto coba",
+    "caption": "foto coba coba",
+    "image_url": "www.fb.com"
+}
