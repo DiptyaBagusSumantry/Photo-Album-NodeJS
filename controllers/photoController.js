@@ -10,7 +10,10 @@ class PhotoController{
             include: User
         })
         .then(result => {
-            res.status(200).json(result);
+            res.status(200).json({
+                message: "Menampilkan Data",
+                data: result
+            });
         })
         .catch(err => {
             res.status(500).json(err);
@@ -21,7 +24,10 @@ class PhotoController{
         let id = +req.params.id
         Photo.findByPk(id)
         .then(result => {
-            res.status(200).json(result);
+            res.status(200).json({
+                message: "menamilkan data : ",
+                data: result
+            });
         })
         .catch(err => {
             res.status(500).json(err);
@@ -30,15 +36,19 @@ class PhotoController{
     
     static createPhoto(req,res){
      const {title, caption, image_url} = req.body;
-
+     const user = res.locals.user.id;
      Photo.create({
         title,
         caption,
-        image_url
+        image_url,
+        UserId: user
      })
 
      .then(result => {
-        res.status(201).json(result)
+        res.status(201).json({
+            message: "Data berhasil di buat : ",
+            data: result
+        })
      })
      .catch(err => {
         res.status(500).json(err);
@@ -64,7 +74,9 @@ class PhotoController{
         )
 
         .then(result => {
-            res.status(200).json(result);
+            res.status(200).json({
+                message: "Data berhasil di edit"
+            });
         })
         .catch(err => {
             res.status(500).json(err);
@@ -80,7 +92,9 @@ class PhotoController{
             }
         })
         .then(result => {
-            res.status(200).json(result);
+            res.status(200).json({
+                message: "Data berhasil di Hapus"
+            });
         })
         .catch(err => {
             res.status(500).json(err);

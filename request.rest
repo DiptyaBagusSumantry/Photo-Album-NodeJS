@@ -1,14 +1,31 @@
-GET http://localhost:3001/photos
 
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJkaXB0eWFAZ21haWwuY29tIiwiaWF0IjoxNjY2OTQ0NTgzLCJleHAiOjE2NjY5NTE3ODN9.1uitCOaARuaBW0iOmuUkHzvTSjjL3SxR-c-dO5vs3w0
+//Users
+//register
+POST  http://localhost:3001/user/create 
+Content-Type: application/json
+
+{
+    "email" : "diptya@gmail.com",
+    "password": "1234",
+    "username": "bagus"
+}
+
+//login
 ###
-GET http://localhost:3001/tulisan
+POST  http://localhost:3001/user/login 
+Content-Type: application/json
 
-###
-GET http://localhost:3001/getOne/2
+{
+    "email": "diptya@gmail.com",
+    "password": "1234"
+}
 
+//PHOTO
 ###
 POST  http://localhost:3001/photos/create 
 Content-Type: application/json
+token: {{token}}
 
 {
     "title" : "Foto joss",
@@ -17,14 +34,31 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:3001/delete/3
+GET http://localhost:3001/photos
+token: {{token}}
+
+###
+GET http://localhost:3001/getOne/1
+token: {{token}}
 
 ###
 PUT http://localhost:3001/update/6
 Content-Type: application/json
+token: {{token}}
 
 {
     "title" : "Foto coba",
     "caption": "foto coba coba",
     "image_url": "www.fb.com"
 }
+
+###
+DELETE http://localhost:3001/delete/2
+token: {{token}}
+
+
+
+
+//coba
+###
+GET http://localhost:3001/tulisan
