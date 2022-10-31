@@ -1,5 +1,5 @@
 
-@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJkaXB0eWFAZ21haWwuY29tIiwiaWF0IjoxNjY2OTQ0NTgzLCJleHAiOjE2NjY5NTE3ODN9.1uitCOaARuaBW0iOmuUkHzvTSjjL3SxR-c-dO5vs3w0
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJkaXB0eWFAZ21haWwuY29tIiwiaWF0IjoxNjY3MTk2OTY2LCJleHAiOjE2NjcyMDQxNjZ9.wzqt4yZi-aFAX2DN31aLD4DNKqyf70mOfFLatwanR4Y
 //Users
 //register
 POST  http://localhost:3001/user/create 
@@ -38,22 +38,22 @@ GET http://localhost:3001/photos
 token: {{token}}
 
 ###
-GET http://localhost:3001/getOne/1
+GET http://localhost:3001/getOne/23
 token: {{token}}
 
 ###
-PUT http://localhost:3001/update/6
+PUT http://localhost:3001/update/23
 Content-Type: application/json
 token: {{token}}
 
 {
     "title" : "Foto coba",
-    "caption": "foto coba coba",
+    "caption": "foto coba coba edit",
     "image_url": "www.fb.com"
 }
 
 ###
-DELETE http://localhost:3001/delete/2
+DELETE http://localhost:3001/delete/23
 token: {{token}}
 
 
